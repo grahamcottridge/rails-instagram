@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      if params(:images)
+      if params[:images]
         params[:images].each do |img|
           @post.photos.create(image: img)
         end
@@ -25,7 +25,7 @@ class PostsController < ApplicationController
   end
 
   def show
-
+    @photos = @post.photos
   end
 
   private
