@@ -7,7 +7,7 @@ class LikesController < ApplicationController
     if @like.save
       respond_to :js
     else
-      flash[:alert] = "something went wrong ..."
+      flash[:alert] = "Something went wrong ..."
     end
   end
 
@@ -17,14 +17,12 @@ class LikesController < ApplicationController
     if @like.destroy
       respond_to :js
     else
-      flash[:alert] = "something went wrong ..."
+      flash[:alert] = "Something went wrong ..."
     end
   end
 
   private
-
   def like_params
     params.permit :post_id
   end
-
 end
