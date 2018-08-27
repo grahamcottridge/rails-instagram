@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :authenticae_user!
+  before_action :authenticate_user!
 
   def index
     @comments = @post.comments.includes(:user)
@@ -25,11 +25,8 @@ class CommentsController < ApplicationController
     end
   end
 
-
   private
-
   def comment_params
-    params.require(:comment).permit :user_id, :post_id, :content
+    params.required(:comment).permit :user_id, :post_id, :content
   end
-
 end
