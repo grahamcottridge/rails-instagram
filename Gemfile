@@ -57,6 +57,6 @@ gem 'cloudinary'
 gem 'figaro'
 gem 'dropzonejs-rails'
 gem 'will_paginate-bootstrap4'
-gem "nokogiri", ">= 1.10.4"
+
 
 ruby "2.5.3"
